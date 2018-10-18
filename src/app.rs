@@ -422,6 +422,7 @@ impl<S, E, X> ApplicationBuilder<S, E, X> {
     /// game.run();
     /// ~~~
 
+    // TODO: Unused lifetime. Is it required?
     pub fn new<'a, P: AsRef<Path>>(path: P, initial_state: S) -> Result<Self> {
         use rustc_version_runtime;
 
@@ -453,7 +454,7 @@ impl<S, E, X> ApplicationBuilder<S, E, X> {
         });
         let pool = thread_pool_builder
             .build()
-            .map(|p| Arc::new(p))
+            .map(Arc::new)
             .map_err(|err| Error::Core(err.description().to_string().into()))?;
         world.add_resource(Loader::new(path.as_ref().to_owned(), pool.clone()));
         world.add_resource(pool);

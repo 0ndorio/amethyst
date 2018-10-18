@@ -134,7 +134,7 @@ where
 /// Defines the hierarchy of nodes that a single animation can control.
 /// Attached to the root entity that an animation can be defined for.
 /// Only required for animations which target more than a single node or entity.
-#[derive(Debug, Clone)]
+#[derive(Debug, Default, Clone)]
 pub struct AnimationHierarchy<T> {
     /// A mapping between indices and entities
     pub nodes: FnvHashMap<usize, Entity>,
@@ -801,7 +801,7 @@ where
         rate_multiplier: f32,
         command: AnimationCommand<T>,
     ) {
-        if let Some(_) = self.animations.iter().find(|a| a.0 == id) {
+        if self.animations.iter().any(|a| a.0 == id) {
             return;
         }
         self.animations.push((
@@ -827,7 +827,7 @@ where
         wait_for: I,
         wait_deferred_for: DeferStartRelation,
     ) {
-        if let Some(_) = self.animations.iter().find(|a| a.0 == id) {
+        if self.animations.iter().any(|a| a.0 == id) {
             return;
         }
         self.deferred_animations.push(DeferredStart {
@@ -845,7 +845,7 @@ where
 
     /// Insert an animation directly
     pub fn insert(&mut self, id: I, control: AnimationControl<T>) {
-        if let Some(_) = self.animations.iter().find(|a| a.0 == id) {
+        if self.animations.iter().any(|a| a.0 == id) {
             return;
         }
         self.animations.push((id, control));
@@ -853,11 +853,7 @@ where
 
     /// Check if there is an animation with the given id in the set
     pub fn has_animation(&mut self, id: I) -> bool {
-        if let Some(_) = self.animations.iter().find(|a| a.0 == id) {
-            true
-        } else {
-            false
-        }
+        self.animations.iter().any(|a| a.0 == id)
     }
 }
 

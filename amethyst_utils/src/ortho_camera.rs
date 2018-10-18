@@ -73,13 +73,13 @@ impl CameraNormalizeMode {
     /// Get the camera matrix offsets according to the specified options.
     fn camera_offsets(&self, aspect_ratio: f32) -> (f32, f32, f32, f32) {
         match self {
-            &CameraNormalizeMode::Lossy {
+            CameraNormalizeMode::Lossy {
                 ref stretch_direction,
             } => match stretch_direction {
                 Axis2::X => CameraNormalizeMode::lossy_x(aspect_ratio),
                 Axis2::Y => CameraNormalizeMode::lossy_y(aspect_ratio),
             },
-            &CameraNormalizeMode::Contain => {
+            CameraNormalizeMode::Contain => {
                 if aspect_ratio > 1.0 {
                     CameraNormalizeMode::lossy_x(aspect_ratio)
                 } else if aspect_ratio < 1.0 {
@@ -121,8 +121,11 @@ impl<'a> System<'a> for CameraNormalOrthoSystem {
         WriteStorage<'a, Camera>,
         ReadStorage<'a, CameraNormalOrtho>,
     );
+
+    #[cfg_attr(feature = "cargo-clippy", allow(float_cmp))] // cmp just used to recognize change
     fn run(&mut self, (dimensions, mut cameras, ortho_cameras): Self::SystemData) {
         let aspect = dimensions.aspect_ratio();
+
         if aspect != self.aspect_ratio_cache {
             self.aspect_ratio_cache = aspect;
 
