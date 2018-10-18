@@ -25,7 +25,6 @@
 //! [bk]: https://www.amethyst.rs/book/master/
 
 #![doc(html_logo_url = "https://www.amethyst.rs/assets/amethyst.svg")]
-
 #![warn(missing_docs)]
 #![cfg_attr(feature = "cargo-clippy", allow(type_complexity))] // complex project
 
@@ -101,8 +100,8 @@ pub use light::{DirectionalLight, Light, LightPrefab, PointLight, SpotLight, Sun
 pub use mesh::{vertex_data, Mesh, MeshBuilder, MeshHandle, VertexBuffer};
 pub use mtl::{Material, MaterialDefaults, MaterialTextureSet, TextureOffset};
 pub use pass::{
-    get_camera, set_vertex_args, DrawDebugLines, DebugLinesParams, DrawFlat, DrawFlatSeparate, DrawPbm,
-    DrawPbmSeparate, DrawShaded, DrawShadedSeparate, DrawSprite,
+    get_camera, set_vertex_args, DebugLinesParams, DrawDebugLines, DrawFlat, DrawFlatSeparate,
+    DrawPbm, DrawPbmSeparate, DrawShaded, DrawShadedSeparate, DrawSprite,
 };
 pub use pipe::{
     ColorBuffer, Data, DepthBuffer, DepthMode, Effect, EffectBuilder, Init, Meta, NewEffect,
