@@ -5,8 +5,6 @@ use amethyst_core::{
     specs::{Read, ReadStorage},
     transform::GlobalTransform,
 };
-use gfx::pso::buffer::ElemStride;
-use glsl_layout::{mat4, Uniform};
 use crate::{
     error::Result,
     get_camera,
@@ -16,6 +14,8 @@ use crate::{
     },
     set_vertex_args, ActiveCamera, Camera, Encoder, Factory, Mesh, PosTex, Shape, VertexFormat,
 };
+use gfx::pso::buffer::ElemStride;
+use glsl_layout::{mat4, Uniform};
 
 use super::{SkyboxColor, FRAG_SRC, VERT_SRC};
 

@@ -35,8 +35,6 @@ extern crate shred_derive;
 #[cfg(feature = "profiler")]
 extern crate thread_profiler;
 
-#[cfg(feature = "json")]
-pub use formats::JsonFormat;
 pub use crate::{
     asset::{Asset, Format, FormatValue, SimpleFormat},
     cache::Cache,
@@ -50,6 +48,8 @@ pub use crate::{
     source::{Directory, Source},
     storage::{AssetStorage, Handle, ProcessingState, Processor, WeakHandle},
 };
+#[cfg(feature = "json")]
+pub use formats::JsonFormat;
 
 mod asset;
 mod cache;

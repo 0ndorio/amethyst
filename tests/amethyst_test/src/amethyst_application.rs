@@ -665,9 +665,9 @@ mod test {
     use super::AmethystApplication;
     use crate::EffectReturn;
     use crate::FunctionState;
+    use crate::PopState;
     #[cfg(feature = "graphics")]
     use MaterialAnimationFixture;
-    use crate::PopState;
     #[cfg(feature = "graphics")]
     use SpriteRenderAnimationFixture;
 

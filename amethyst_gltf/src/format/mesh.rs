@@ -1,8 +1,8 @@
 use std::ops::Range;
 
+use crate::GltfSceneOptions;
 use gltf;
 use mikktspace;
-use crate::GltfSceneOptions;
 
 use crate::renderer::{AnimatedComboMeshCreator, Attribute, MeshData, Separate};
 

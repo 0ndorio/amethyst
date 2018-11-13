@@ -5,8 +5,8 @@ use amethyst::{
     ecs::prelude::{Join, Read, ReadExpect, ReadStorage, System, WriteStorage},
 };
 use crate::audio::{play_bounce, Sounds};
-use std::ops::Deref;
 use crate::{Ball, Paddle, Side};
+use std::ops::Deref;
 
 /// This system is responsible for detecting collisions between balls and
 /// paddles, as well as balls and the top and bottom edges of the arena.

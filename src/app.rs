@@ -2,9 +2,9 @@
 
 use std::{error::Error as StdError, marker::PhantomData, path::Path, sync::Arc, time::Duration};
 
+use crate::shred::Resource;
 use log::Level;
 use rayon::ThreadPoolBuilder;
-use crate::shred::Resource;
 
 #[cfg(feature = "profiler")]
 use thread_profiler::{register_thread_with_profiler, write_profile};
