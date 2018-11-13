@@ -8,7 +8,7 @@ use amethyst_core::{
 };
 use amethyst_renderer::{Texture, TextureHandle};
 
-use {
+use crate::{
     font::default::get_default_font, Anchor, FontAsset, FontHandle, MouseReactive, OnUiActionImage,
     OnUiActionSound, Stretch, UiButton, UiImage, UiText, UiTransform,
 };

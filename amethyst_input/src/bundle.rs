@@ -12,7 +12,7 @@ use amethyst_core::{
     specs::prelude::DispatcherBuilder,
 };
 
-use {Bindings, InputSystem};
+use crate::{Bindings, InputSystem};
 
 /// Bundle for adding the `InputHandler`.
 ///

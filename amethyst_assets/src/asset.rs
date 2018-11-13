@@ -2,7 +2,7 @@ use std::sync::Arc;
 
 use amethyst_core::specs::storage::UnprotectedStorage;
 
-use {ErrorKind, Handle, Reload, Result, ResultExt, SingleFile, Source};
+use crate::{ErrorKind, Handle, Reload, Result, ResultExt, SingleFile, Source};
 
 /// One of the three core traits of this crate.
 ///

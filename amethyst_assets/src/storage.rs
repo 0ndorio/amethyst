@@ -18,7 +18,7 @@ use amethyst_core::{
     Time,
 };
 
-use {
+use crate::{
     asset::{Asset, FormatValue},
     error::{Error, ErrorKind, Result, ResultExt},
     progress::Tracker,

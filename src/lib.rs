@@ -90,7 +90,7 @@ extern crate rustc_version_runtime;
 #[macro_use]
 extern crate serde_derive;
 
-pub use core::{shred, shrev, specs as ecs};
+pub use crate::core::{shred, shrev, specs as ecs};
 
 pub use self::{
     app::{Application, ApplicationBuilder, CoreApplication},
@@ -106,7 +106,7 @@ pub use self::{
 };
 
 #[doc(hidden)]
-pub use derive::*;
+pub use crate::derive::*;
 
 pub mod prelude;
 

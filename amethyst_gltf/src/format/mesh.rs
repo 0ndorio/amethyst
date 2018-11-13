@@ -2,9 +2,9 @@ use std::ops::Range;
 
 use gltf;
 use mikktspace;
-use GltfSceneOptions;
+use crate::GltfSceneOptions;
 
-use renderer::{AnimatedComboMeshCreator, Attribute, MeshData, Separate};
+use crate::renderer::{AnimatedComboMeshCreator, Attribute, MeshData, Separate};
 
 use super::{Buffers, GltfError};
 
@@ -57,7 +57,7 @@ pub fn load_mesh(
                 }
                 None => normals.collect(),
             }).unwrap_or_else(|| {
-                use core::nalgebra::Point3;
+                use crate::core::nalgebra::Point3;
                 use std::iter::once;
                 let f = faces
                     .as_ref()

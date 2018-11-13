@@ -8,7 +8,7 @@ use amethyst_core::{
     SystemBundle, Time,
 };
 
-use {Asset, Format, FormatValue, Loader, Result, Source};
+use crate::{Asset, Format, FormatValue, Loader, Result, Source};
 
 /// This bundle activates hot reload for the `Loader`,
 /// adds a `HotReloadStrategy` and the `HotReloadSystem`.

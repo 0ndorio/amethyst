@@ -7,7 +7,7 @@ use amethyst_core::{
 };
 use gfx::pso::buffer::ElemStride;
 use glsl_layout::{mat4, Uniform};
-use {
+use crate::{
     error::Result,
     get_camera,
     pipe::{

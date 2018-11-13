@@ -8,7 +8,7 @@ use smallvec::SmallVec;
 
 use amethyst_core::specs::{prelude::Component, storage::BTreeStorage};
 
-use {source::Source, DecoderError};
+use crate::{source::Source, DecoderError};
 
 /// An audio source, add this component to anything that emits sound.
 #[derive(Default)]

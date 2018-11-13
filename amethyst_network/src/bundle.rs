@@ -7,7 +7,7 @@ use amethyst_core::{
     shred::DispatcherBuilder,
 };
 
-use filter::NetFilter;
+use crate::filter::NetFilter;
 
 use super::NetSocketSystem;
 

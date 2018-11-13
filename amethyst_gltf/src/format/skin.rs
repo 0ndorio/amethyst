@@ -1,9 +1,9 @@
 use std::collections::HashMap;
 
 use gltf;
-use GltfPrefab;
+use crate::GltfPrefab;
 
-use {
+use crate::{
     animation::{JointPrefab, SkinPrefab, SkinnablePrefab},
     assets::Prefab,
     core::nalgebra::Matrix4,

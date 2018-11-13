@@ -85,7 +85,7 @@ extern crate gfx_device_vulkan;
 #[cfg(feature = "vulkan")]
 extern crate gfx_window_vulkan;
 
-pub use {
+pub use crate::{
     bundle::RenderBundle,
     cam::{ActiveCamera, ActiveCameraPrefab, Camera, CameraPrefab, Projection},
     color::Rgba,

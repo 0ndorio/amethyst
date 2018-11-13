@@ -5,7 +5,7 @@ use hetseq::*;
 
 use amethyst_core::specs::prelude::SystemData;
 
-use {
+use crate::{
     error::{Error, Result},
     pipe::{
         pass::{CompiledPass, Pass, PassData},
@@ -252,7 +252,7 @@ impl<Q> StageBuilder<Q> {
             .passes
             .into_list()
             .fmap(CompilePass::new(fac, &out, multisampling))
-            .try()?;
+            .r#try()?;
 
         Ok(Stage {
             clear_color: self.clear_color,

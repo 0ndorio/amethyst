@@ -6,7 +6,7 @@ use amethyst_core::{
     specs::prelude::{Entity, WriteStorage},
 };
 
-use resources::{AnimationControlSet, AnimationSampling};
+use crate::resources::{AnimationControlSet, AnimationSampling};
 
 use self::SamplerPrimitive::*;
 

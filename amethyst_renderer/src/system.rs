@@ -12,7 +12,7 @@ use amethyst_core::{
     Time,
 };
 
-use {
+use crate::{
     config::DisplayConfig,
     error::Result,
     formats::{create_mesh_asset, create_texture_asset},
@@ -198,7 +198,7 @@ where
 }
 
 fn create_default_mat(res: &mut Resources) -> Material {
-    use mtl::TextureOffset;
+    use crate::mtl::TextureOffset;
 
     use amethyst_assets::Loader;
 

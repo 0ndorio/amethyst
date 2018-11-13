@@ -13,7 +13,7 @@ use amethyst_core::specs::{
     prelude::{Entity, Read, ReadExpect, WriteStorage},
 };
 
-use {Animation, AnimationHierarchy, AnimationSampling, AnimationSet, RestState, Sampler};
+use crate::{Animation, AnimationHierarchy, AnimationSampling, AnimationSet, RestState, Sampler};
 
 /// `PrefabData` for loading a single `Animation`
 ///

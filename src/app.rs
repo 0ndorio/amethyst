@@ -4,13 +4,13 @@ use std::{error::Error as StdError, marker::PhantomData, path::Path, sync::Arc, 
 
 use log::Level;
 use rayon::ThreadPoolBuilder;
-use shred::Resource;
+use crate::shred::Resource;
 
 #[cfg(feature = "profiler")]
 use thread_profiler::{register_thread_with_profiler, write_profile};
 use winit::Event;
 
-use {
+use crate::{
     assets::{Loader, Source},
     callback_queue::CallbackQueue,
     core::{
@@ -260,7 +260,7 @@ where
         if self.ignore_window_close {
             false
         } else {
-            use renderer::WindowEvent;
+            use crate::renderer::WindowEvent;
             let world = &mut self.world;
             let reader_id = &mut self.event_reader_id;
             world.exec(|ev: Read<EventChannel<Event>>| {

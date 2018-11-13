@@ -7,7 +7,7 @@ use gltf::{
     Gltf,
 };
 
-use assets::{Error as AssetError, Result as AssetResult, Source as AssetSource};
+use crate::assets::{Error as AssetError, Result as AssetResult, Source as AssetSource};
 
 #[derive(Debug)]
 pub enum ImageFormat {

@@ -7,7 +7,7 @@ use amethyst_core::specs::prelude::{
     Component, DenseVecStorage, Entity, FlaggedStorage, WriteStorage,
 };
 
-use {
+use crate::{
     error::Result,
     formats::MeshCreator,
     mesh::{Mesh, MeshBuilder},

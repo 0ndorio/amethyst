@@ -12,7 +12,7 @@ use amethyst_core::{
     transform::GlobalTransform,
 };
 
-use {
+use crate::{
     cam::{ActiveCamera, Camera},
     error::Result,
     hidden::{Hidden, HiddenPropagate},

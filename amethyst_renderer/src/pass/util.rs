@@ -9,7 +9,7 @@ use amethyst_core::{
     GlobalTransform,
 };
 
-use {
+use crate::{
     cam::{ActiveCamera, Camera},
     mesh::Mesh,
     mtl::{Material, MaterialDefaults, TextureOffset},

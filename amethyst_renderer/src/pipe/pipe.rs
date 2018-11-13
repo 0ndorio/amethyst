@@ -3,7 +3,7 @@ use hetseq::*;
 
 use amethyst_core::specs::prelude::SystemData;
 
-use {
+use crate::{
     error::{Error, Result},
     types::{Encoder, Factory},
 };
@@ -237,7 +237,7 @@ where
             .stages
             .into_list()
             .fmap(BuildStage::new(fac, &targets, multisampling))
-            .try()?;
+            .r#try()?;
 
         Ok(Pipeline { stages, targets })
     }

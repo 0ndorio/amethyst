@@ -7,7 +7,7 @@ use std::{
     result::Result as StdResult,
 };
 
-use {config::ConfigError, core, renderer, state::StateError};
+use crate::{config::ConfigError, core, renderer, state::StateError};
 
 /// Engine result type.
 pub type Result<T> = StdResult<T, Error>;

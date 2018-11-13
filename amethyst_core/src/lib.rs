@@ -27,7 +27,7 @@ compile_error!("the cfg flag \"no_threading\" is required when building for emsc
 
 use std::sync::Arc;
 
-pub use {
+pub use crate::{
     bundle::{Error, ErrorKind, Result, SystemBundle},
     event::EventReader,
     timing::*,

@@ -1,14 +1,14 @@
 use std::{hash::Hash, marker};
 
-use resources::AnimationSampling;
-use skinning::VertexSkinningSystem;
+use crate::resources::AnimationSampling;
+use crate::skinning::VertexSkinningSystem;
 
 use amethyst_core::{
     specs::prelude::{Component, DispatcherBuilder},
     Result, SystemBundle,
 };
 
-use systems::{
+use crate::systems::{
     AnimationControlSystem, AnimationProcessor, SamplerInterpolationSystem, SamplerProcessor,
 };
 

@@ -10,7 +10,7 @@ use amethyst_core::{
     transform::GlobalTransform,
 };
 
-use {
+use crate::{
     cam::{ActiveCamera, Camera},
     debug_drawing::{DebugLine, DebugLines, DebugLinesComponent},
     error::Result,

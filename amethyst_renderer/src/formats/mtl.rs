@@ -1,7 +1,7 @@
 use amethyst_assets::{Format, Handle, PrefabData, PrefabError, ProgressCounter};
 use amethyst_core::specs::prelude::{Entity, ReadExpect, WriteStorage};
 
-use {
+use crate::{
     mtl::{Material, MaterialDefaults, TextureOffset},
     transparent::Transparent,
 };

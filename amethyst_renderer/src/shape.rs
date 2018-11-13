@@ -16,7 +16,7 @@ use amethyst_core::{
     specs::prelude::{Entity, Read, ReadExpect, WriteStorage},
 };
 
-use {
+use crate::{
     ComboMeshCreator, Mesh, MeshData, MeshHandle, Normal, PosNormTangTex, PosNormTex, PosTex,
     Position, Separate, Tangent, TexCoord,
 };

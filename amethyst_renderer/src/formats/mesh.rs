@@ -9,7 +9,7 @@ use amethyst_core::{
     specs::prelude::{Component, Entity, Read, ReadExpect, VecStorage, WriteStorage},
 };
 
-use {
+use crate::{
     mesh::{Mesh, MeshBuilder, MeshHandle},
     vertex::*,
     wavefront_obj::obj::{
@@ -226,7 +226,7 @@ pub fn create_mesh_asset(data: MeshData, renderer: &mut Renderer) -> Result<Proc
 pub fn build_mesh_with_combo(
     combo: VertexBufferCombination,
     renderer: &mut Renderer,
-) -> ::error::Result<Mesh> {
+) -> crate::error::Result<Mesh> {
     build_mesh_with_some!(
         MeshBuilder::new(combo.0),
         renderer,
@@ -245,7 +245,7 @@ pub fn build_mesh_with_combo(
 /// pass.
 pub trait MeshCreator: Send + Sync + Debug + 'static {
     /// Build a mesh given a `Renderer`
-    fn build(self: Box<Self>, renderer: &mut Renderer) -> ::error::Result<Mesh>;
+    fn build(self: Box<Self>, renderer: &mut Renderer) -> crate::error::Result<Mesh>;
 
     /// Returns the vertices contained in the MeshCreator.
     fn vertices(&self) -> &Vec<Separate<Position>>;
@@ -274,7 +274,7 @@ impl ComboMeshCreator {
 }
 
 impl MeshCreator for ComboMeshCreator {
-    fn build(self: Box<Self>, renderer: &mut Renderer) -> ::error::Result<Mesh> {
+    fn build(self: Box<Self>, renderer: &mut Renderer) -> crate::error::Result<Mesh> {
         build_mesh_with_combo(self.combo, renderer)
     }
 

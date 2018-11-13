@@ -20,7 +20,7 @@ mod net_event;
 mod network_socket;
 mod test;
 
-pub use {
+pub use crate::{
     bundle::NetworkBundle,
     connection::{ConnectionState, NetConnection, NetIdentity},
     filter::{FilterConnected, NetFilter},

@@ -12,7 +12,7 @@ use amethyst_core::{
     timing::secs_to_duration,
 };
 
-use resources::{
+use crate::resources::{
     Animation, AnimationCommand, AnimationControl, AnimationControlSet, AnimationHierarchy,
     AnimationSampling, AnimationSet, ApplyData, ControlState, DeferStartRelation, RestState,
     Sampler, SamplerControl, SamplerControlSet, StepDirection,

@@ -15,7 +15,7 @@ use gfx::{
 use amethyst_assets::{Asset, Handle};
 use amethyst_core::specs::prelude::DenseVecStorage;
 
-use {
+use crate::{
     error::Result,
     formats::TextureData,
     types::{ChannelFormat, Factory, RawShaderResourceView, RawTexture, Sampler, SurfaceFormat},

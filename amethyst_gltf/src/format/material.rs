@@ -4,7 +4,7 @@ use gfx::texture::SamplerInfo;
 use gltf::{self, material::AlphaMode};
 use itertools::Itertools;
 
-use {
+use crate::{
     assets::Source,
     renderer::{
         JpgFormat, MaterialPrefab, PngFormat, TextureData, TextureFormat, TextureMetadata,

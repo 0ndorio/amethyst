@@ -512,7 +512,7 @@ impl Serialize for Transform {
 
 #[cfg(test)]
 mod tests {
-    use {
+    use crate::{
         approx::*,
         nalgebra::{UnitQuaternion, Vector3},
         Transform,

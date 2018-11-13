@@ -2,7 +2,7 @@
 
 use amethyst_core::specs::prelude::SystemData;
 
-use {
+use crate::{
     error::Result,
     pipe::{Effect, NewEffect, Target},
     types::{Encoder, Factory},

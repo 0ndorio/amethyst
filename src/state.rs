@@ -1,10 +1,10 @@
 //! Utilities for game state management.
 
 use amethyst_input::is_close_requested;
-use ecs::prelude::World;
+use crate::ecs::prelude::World;
 use std::fmt::Result as FmtResult;
 use std::fmt::{Display, Formatter};
-use {GameData, StateEvent};
+use crate::{GameData, StateEvent};
 
 /// Error type for errors occurring in StateMachine
 #[derive(Debug)]
@@ -525,7 +525,7 @@ mod tests {
 
     #[test]
     fn switch_pop() {
-        use ecs::prelude::World;
+        use crate::ecs::prelude::World;
 
         let mut world = World::new();
 

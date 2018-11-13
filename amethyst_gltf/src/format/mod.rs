@@ -4,7 +4,7 @@ use std::{collections::HashMap, error::Error as StdError, fmt, sync::Arc};
 
 use gltf::{self, Gltf};
 
-use {
+use crate::{
     animation::AnimationHierarchyPrefab,
     assets::{
         Error as AssetError, Format, FormatValue, Prefab, Result as AssetResult, ResultExt, Source,

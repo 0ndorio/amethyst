@@ -37,7 +37,7 @@ extern crate thread_profiler;
 
 #[cfg(feature = "json")]
 pub use formats::JsonFormat;
-pub use {
+pub use crate::{
     asset::{Asset, Format, FormatValue, SimpleFormat},
     cache::Cache,
     error::{Error, ErrorKind, Result, ResultExt},

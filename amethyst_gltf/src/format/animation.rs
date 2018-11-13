@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use gltf;
 
-use {
+use crate::{
     animation::{
         AnimationPrefab, AnimationSetPrefab, InterpolationFunction, InterpolationPrimitive,
         Sampler, SamplerPrimitive, TransformChannel,

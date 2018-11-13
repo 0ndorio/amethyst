@@ -11,7 +11,7 @@ use rodio::{default_output_device, output_devices, Decoder, Device, Sink, Source
 
 use amethyst_core::shred::Resources;
 
-use {sink::AudioSink, source::Source, DecoderError};
+use crate::{sink::AudioSink, source::Source, DecoderError};
 
 /// A speaker(s) through which audio can be played.
 ///

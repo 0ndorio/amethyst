@@ -3,7 +3,7 @@ use std::{borrow::Borrow, hash::Hash, path::PathBuf, sync::Arc};
 use fnv::FnvHashMap;
 use rayon::ThreadPool;
 
-use {
+use crate::{
     storage::{AssetStorage, Handle, Processed},
     Asset, Directory, ErrorKind, Format, FormatValue, Progress, ResultExt, Source,
 };
@@ -107,7 +107,7 @@ impl Loader {
     {
         #[cfg(feature = "profiler")]
         profile_scope!("load_asset_from");
-        use progress::Tracker;
+        use crate::progress::Tracker;
 
         let name = name.into();
         let source = source.as_ref();

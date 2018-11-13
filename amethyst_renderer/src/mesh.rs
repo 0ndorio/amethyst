@@ -10,7 +10,7 @@ use gfx::Primitive;
 use amethyst_assets::Handle;
 use amethyst_core::nalgebra::{Matrix4, Point3, Rotation3, Translation3, Unit, Vector3};
 
-use {
+use crate::{
     error::Result,
     types::{Factory, RawBuffer, Slice},
     vertex::{Attributes, VertexFormat},

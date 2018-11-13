@@ -24,8 +24,8 @@ extern crate thread_profiler;
 
 use std::{collections::HashMap, ops::Range};
 
-pub use format::GltfSceneFormat;
-use {
+pub use crate::format::GltfSceneFormat;
+use crate::{
     animation::{AnimatablePrefab, SkinnablePrefab},
     assets::{Handle, Prefab, PrefabData, PrefabLoaderSystem, ProgressCounter},
     core::{
