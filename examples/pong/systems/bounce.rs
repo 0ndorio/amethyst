@@ -4,8 +4,10 @@ use amethyst::{
     core::transform::Transform,
     ecs::prelude::{Join, Read, ReadExpect, ReadStorage, System, WriteStorage},
 };
-use crate::audio::{play_bounce, Sounds};
-use crate::{Ball, Paddle, Side};
+use crate::{
+    audio::{play_bounce, Sounds},
+    Ball, Paddle, Side,
+};
 use std::ops::Deref;
 
 /// This system is responsible for detecting collisions between balls and

@@ -3,8 +3,7 @@ use amethyst::{
     ecs::prelude::{Join, Read, ReadStorage, System, WriteStorage},
     input::InputHandler,
 };
-use crate::config::ArenaConfig;
-use crate::Paddle;
+use crate::{config::ArenaConfig, Paddle};
 /// This system is responsible for moving all the paddles according to the user
 /// provided input.
 pub struct PaddleSystem;

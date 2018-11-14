@@ -18,8 +18,7 @@ use amethyst::{
     utils::application_root_dir,
 };
 
-use crate::audio::Music;
-use crate::bundle::PongBundle;
+use crate::{audio::Music, bundle::PongBundle};
 use std::time::Duration;
 
 const ARENA_HEIGHT: f32 = 100.0;

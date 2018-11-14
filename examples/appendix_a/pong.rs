@@ -11,9 +11,11 @@ use amethyst::{
     },
     ui::{Anchor, TtfFormat, UiText, UiTransform},
 };
-use crate::config::{ArenaConfig, BallConfig, PaddlesConfig};
-use crate::systems::ScoreText;
-use crate::{Ball, Paddle, Side};
+use crate::{
+    config::{ArenaConfig, BallConfig, PaddlesConfig},
+    systems::ScoreText,
+    Ball, Paddle, Side,
+};
 
 pub struct Pong;
 

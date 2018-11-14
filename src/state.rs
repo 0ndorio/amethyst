@@ -1,8 +1,7 @@
 //! Utilities for game state management.
 
 use amethyst_input::is_close_requested;
-use crate::ecs::prelude::World;
-use crate::{GameData, StateEvent};
+use crate::{ecs::prelude::World, GameData, StateEvent};
 use std::fmt::Result as FmtResult;
 use std::fmt::{Display, Formatter};
 

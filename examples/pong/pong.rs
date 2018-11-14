@@ -9,9 +9,7 @@ use amethyst::{
     },
     ui::{Anchor, TtfFormat, UiText, UiTransform},
 };
-use crate::systems::ScoreText;
-use crate::{Ball, Paddle, Side};
-use crate::{ARENA_HEIGHT, ARENA_WIDTH};
+use crate::{systems::ScoreText, Ball, Paddle, Side, ARENA_HEIGHT, ARENA_WIDTH};
 
 pub struct Pong;
 
