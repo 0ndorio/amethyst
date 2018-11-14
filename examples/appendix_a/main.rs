@@ -20,9 +20,7 @@ use amethyst::{
     ui::UiBundle,
     utils::application_root_dir,
 };
-use crate::audio::Music;
-use crate::bundle::PongBundle;
-use crate::config::PongConfig;
+use crate::{audio::Music, bundle::PongBundle, config::PongConfig};
 use std::time::Duration;
 
 const AUDIO_MUSIC: &'static [&'static str] = &[
