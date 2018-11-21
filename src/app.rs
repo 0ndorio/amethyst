@@ -387,7 +387,7 @@ where
 impl<'a, T, E, R> Drop for CoreApplication<'a, T, E, R> {
     fn drop(&mut self) {
         // TODO: Specify filename in config.
-        use utils::application_root_dir;
+        use crate::utils::application_root_dir;
         let path = format!("{}/thread_profile.json", application_root_dir());
         write_profile(path.as_str());
     }

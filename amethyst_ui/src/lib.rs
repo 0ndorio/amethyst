@@ -31,10 +31,6 @@ extern crate unicode_normalization;
 extern crate unicode_segmentation;
 extern crate winit;
 
-#[macro_use]
-#[cfg(feature = "profiler")]
-extern crate thread_profiler;
-
 mod action_components;
 mod bundle;
 mod button;
@@ -49,6 +45,9 @@ mod prefab;
 mod resize;
 mod text;
 mod transform;
+
+#[cfg(feature = "profiler")]
+extern crate thread_profiler;
 
 pub use self::{
     action_components::{OnUiActionImage, OnUiActionSound},

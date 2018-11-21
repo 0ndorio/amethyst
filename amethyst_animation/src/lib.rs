@@ -66,9 +66,6 @@ extern crate num_traits;
 #[macro_use]
 extern crate serde;
 
-#[cfg(feature = "profiler")]
-extern crate thread_profiler;
-
 pub use self::{
     bundle::{AnimationBundle, SamplingBundle, VertexSkinningBundle},
     material::{MaterialChannel, MaterialPrimitive},

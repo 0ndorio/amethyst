@@ -12,9 +12,6 @@ extern crate amethyst_renderer;
 extern crate serde;
 extern crate winit;
 
-#[cfg(feature = "profiler")]
-extern crate thread_profiler;
-
 mod bundles;
 mod components;
 mod resources;
