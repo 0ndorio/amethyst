@@ -99,7 +99,7 @@ impl MeshCreator for AnimatedComboMeshCreator {
         &self.combo.0
     }
 
-    fn box_clone(&self) -> Box<MeshCreator> {
+    fn box_clone(&self) -> Box<dyn MeshCreator> {
         Box::new((*self).clone())
     }
 }

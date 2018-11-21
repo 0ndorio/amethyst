@@ -263,7 +263,7 @@ where
             use crate::renderer::WindowEvent;
             let world = &mut self.world;
             let reader_id = &mut self.event_reader_id;
-            world.exec(|ev: Read<EventChannel<Event>>| {
+            world.exec(|ev: Read<'_, EventChannel<Event>>| {
                 ev.read(reader_id).any(|e| {
                     if cfg!(target_os = "ios") {
                         if let Event::WindowEvent {
@@ -797,11 +797,11 @@ where
         let data = init.build(&mut self.world);
         let event_reader_id = self
             .world
-            .exec(|mut ev: Write<EventChannel<Event>>| ev.register_reader());
+            .exec(|mut ev: Write<'_, EventChannel<Event>>| ev.register_reader());
 
         let trans_reader_id = self
             .world
-            .exec(|mut ev: Write<EventChannel<TransEvent<T, E>>>| ev.register_reader());
+            .exec(|mut ev: Write<'_, EventChannel<TransEvent<T, E>>>| ev.register_reader());
 
         Ok(CoreApplication {
             world: self.world,

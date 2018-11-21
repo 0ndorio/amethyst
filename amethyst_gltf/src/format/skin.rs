@@ -13,7 +13,7 @@ use crate::{
 use super::{Buffers, GltfError};
 
 pub fn load_skin(
-    skin: &gltf::Skin,
+    skin: &gltf::Skin<'_>,
     buffers: &Buffers,
     skin_entity: usize,
     node_map: &HashMap<usize, usize>,

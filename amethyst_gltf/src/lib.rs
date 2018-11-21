@@ -1,16 +1,16 @@
 //! A crate for loading GLTF format scenes into Amethyst
 
-#![warn(missing_docs)]
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 extern crate amethyst_animation as animation;
 extern crate amethyst_assets as assets;
 extern crate amethyst_core as core;
 extern crate amethyst_renderer as renderer;
 extern crate base64;
-extern crate fnv;
 extern crate gfx;
 extern crate gltf;
-extern crate hibitset;
 extern crate itertools;
 #[macro_use]
 extern crate log;

@@ -15,7 +15,7 @@ use crate::{source::Source, DecoderError};
 pub struct AudioEmitter {
     pub(crate) sinks: SmallVec<[(SpatialSink, Arc<AtomicBool>); 4]>,
     pub(crate) sound_queue: SmallVec<[Decoder<Cursor<Source>>; 4]>,
-    pub(crate) picker: Option<Box<FnMut(&mut AudioEmitter) -> bool + Send + Sync>>,
+    pub(crate) picker: Option<Box<dyn FnMut(&mut AudioEmitter) -> bool + Send + Sync>>,
 }
 
 impl AudioEmitter {
@@ -40,7 +40,7 @@ impl AudioEmitter {
     /// aliasing.
     /// After the callback is complete, if the picker returned true then the
     /// picker that just finished will be reattached.
-    pub fn set_picker(&mut self, picker: Box<FnMut(&mut AudioEmitter) -> bool + Send + Sync>) {
+    pub fn set_picker(&mut self, picker: Box<dyn FnMut(&mut AudioEmitter) -> bool + Send + Sync>) {
         self.picker = Some(picker);
     }
 

@@ -145,7 +145,7 @@ impl Mesh {
     }
 
     /// Returns the mesh's vertex buffer which matches requested attributes
-    pub fn buffer(&self, attributes: Attributes) -> Option<&RawBuffer> {
+    pub fn buffer(&self, attributes: Attributes<'_>) -> Option<&RawBuffer> {
         for vbuf in self.vbufs.iter() {
             let mut find = attributes.iter();
             let mut next = find.next();
@@ -298,7 +298,7 @@ where
 }
 
 /// Check that attributes are sorted
-fn check_attributes_are_sorted(attrs: Attributes) -> bool {
+fn check_attributes_are_sorted(attrs: Attributes<'_>) -> bool {
     let mut last = 0;
     for attr in attrs {
         if last > attr.1.offset {

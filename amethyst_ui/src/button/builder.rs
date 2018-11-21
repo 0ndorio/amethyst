@@ -230,7 +230,7 @@ impl UiButtonBuilder {
     }
 
     /// Build this with the `UiButtonBuilderResources`.
-    pub fn build(mut self, mut res: UiButtonBuilderResources) -> Entity {
+    pub fn build(mut self, mut res: UiButtonBuilderResources<'_>) -> Entity {
         let mut id = self.name.clone();
         let image_entity = res.entities.create();
         res.transform

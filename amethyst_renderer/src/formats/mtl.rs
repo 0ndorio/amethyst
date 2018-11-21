@@ -82,7 +82,7 @@ where
 fn load_handle<F>(
     entity: Entity,
     prefab: &Option<TexturePrefab<F>>,
-    tp_data: &mut <TexturePrefab<F> as PrefabData>::SystemData,
+    tp_data: &mut <TexturePrefab<F> as PrefabData<'_>>::SystemData,
     def: &Handle<Texture>,
 ) -> Handle<Texture>
 where

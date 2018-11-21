@@ -9,7 +9,7 @@ use crate::renderer::{AnimatedComboMeshCreator, Attribute, MeshData, Separate};
 use super::{Buffers, GltfError};
 
 pub fn load_mesh(
-    mesh: &gltf::Mesh,
+    mesh: &gltf::Mesh<'_>,
     buffers: &Buffers,
     options: &GltfSceneOptions,
 ) -> Result<Vec<(MeshData, Option<usize>, Range<[f32; 3]>)>, GltfError> {

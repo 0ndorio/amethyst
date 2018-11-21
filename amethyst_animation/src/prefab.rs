@@ -61,7 +61,7 @@ where
 pub struct MissingAssetHandle;
 
 impl Display for MissingAssetHandle {
-    fn fmt(&self, f: &mut Formatter) -> FmtResult {
+    fn fmt(&self, f: &mut Formatter<'_>) -> FmtResult {
         write!(f, "{:?}", self)
     }
 }
@@ -71,7 +71,7 @@ impl Error for MissingAssetHandle {
         "AnimationPrefab was not populated with an asset handle prior to calling load_prefab."
     }
 
-    fn cause(&self) -> Option<&Error> {
+    fn cause(&self) -> Option<&dyn Error> {
         None
     }
 }

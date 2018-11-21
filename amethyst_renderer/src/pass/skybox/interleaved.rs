@@ -52,7 +52,7 @@ impl<'a> PassData<'a> for DrawSkybox {
 }
 
 impl Pass for DrawSkybox {
-    fn compile(&mut self, mut effect: NewEffect) -> Result<Effect> {
+    fn compile(&mut self, mut effect: NewEffect<'_>) -> Result<Effect> {
         let verts = Shape::Cube.generate_vertices::<Vec<PosTex>>(None);
         self.mesh = Some(Mesh::build(verts).build(&mut effect.factory)?);
 

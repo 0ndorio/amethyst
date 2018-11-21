@@ -1,6 +1,8 @@
 //! A collection of structures and functions useful across the entire amethyst project.
 
-#![warn(missing_docs)]
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 pub extern crate approx;
 pub extern crate nalgebra;
@@ -10,9 +12,7 @@ pub extern crate specs;
 
 #[macro_use]
 extern crate error_chain;
-extern crate fnv;
 extern crate hibitset;
-extern crate log;
 extern crate rayon;
 #[macro_use]
 extern crate serde;

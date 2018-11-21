@@ -13,7 +13,7 @@ pub struct Loader {
     directory: Arc<Directory>,
     hot_reload: bool,
     pool: Arc<ThreadPool>,
-    sources: FnvHashMap<String, Arc<Source>>,
+    sources: FnvHashMap<String, Arc<dyn Source>>,
 }
 
 impl Loader {
@@ -38,7 +38,7 @@ impl Loader {
         S: Source,
     {
         self.sources
-            .insert(id.into(), Arc::new(source) as Arc<Source>);
+            .insert(id.into(), Arc::new(source) as Arc<dyn Source>);
     }
 
     /// If set to `true`, this `Loader` will ask formats to
@@ -148,7 +148,7 @@ impl Loader {
             let data = format
                 .import(name.clone(), source, options, hot_reload)
                 .chain_err(|| ErrorKind::Format(F::NAME));
-            let tracker = Box::new(tracker) as Box<Tracker>;
+            let tracker = Box::new(tracker) as Box<dyn Tracker>;
 
             processed.push(Processed::NewAsset {
                 data,
@@ -187,7 +187,7 @@ impl Loader {
         handle
     }
 
-    fn source(&self, source: &str) -> Arc<Source> {
+    fn source(&self, source: &str) -> Arc<dyn Source> {
         self.sources
             .get(source)
             .expect("No such source. Maybe you forgot to add it with `Loader::add_source`?")

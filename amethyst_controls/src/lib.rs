@@ -1,7 +1,8 @@
 //! Amethyst control crate.
 
-#![warn(missing_docs)]
-#![cfg_attr(feature = "cargo-clippy", allow(type_complexity))] // complex project
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 extern crate amethyst_assets;
 extern crate amethyst_core;

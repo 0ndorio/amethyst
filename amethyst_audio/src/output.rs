@@ -73,7 +73,7 @@ impl Output {
 }
 
 impl Debug for Output {
-    fn fmt(&self, f: &mut Formatter) -> FmtResult {
+    fn fmt(&self, f: &mut Formatter<'_>) -> FmtResult {
         f.debug_struct("Output")
             .field("device", &self.name())
             .finish()

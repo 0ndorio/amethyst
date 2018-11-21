@@ -95,7 +95,7 @@ impl<'a> PassData<'a> for DrawShadedSeparate {
 }
 
 impl Pass for DrawShadedSeparate {
-    fn compile(&mut self, effect: NewEffect) -> Result<Effect> {
+    fn compile(&mut self, effect: NewEffect<'_>) -> Result<Effect> {
         debug!("Building shaded pass");
         let mut builder = if self.skinning {
             create_skinning_effect(effect, FRAG_SRC)

@@ -39,7 +39,7 @@ pub enum MeshData {
 
     /// Create a mesh from a given creator
     #[serde(skip)]
-    Creator(Box<MeshCreator>),
+    Creator(Box<dyn MeshCreator>),
 }
 
 impl Component for MeshData {
@@ -251,11 +251,11 @@ pub trait MeshCreator: Send + Sync + Debug + 'static {
     fn vertices(&self) -> &Vec<Separate<Position>>;
 
     /// Clone a boxed version of this object
-    fn box_clone(&self) -> Box<MeshCreator>;
+    fn box_clone(&self) -> Box<dyn MeshCreator>;
 }
 
-impl Clone for Box<MeshCreator> {
-    fn clone(&self) -> Box<MeshCreator> {
+impl Clone for Box<dyn MeshCreator> {
+    fn clone(&self) -> Box<dyn MeshCreator> {
         self.box_clone()
     }
 }
@@ -282,7 +282,7 @@ impl MeshCreator for ComboMeshCreator {
         &self.combo.0
     }
 
-    fn box_clone(&self) -> Box<MeshCreator> {
+    fn box_clone(&self) -> Box<dyn MeshCreator> {
         Box::new((*self).clone())
     }
 }

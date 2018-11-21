@@ -74,7 +74,7 @@ where
     fn add_to_entity(
         &self,
         entity: Entity,
-        system_data: &mut <Self as PrefabData>::SystemData,
+        system_data: &mut <Self as PrefabData<'_>>::SystemData,
         entities: &[Entity],
     ) -> Result<(), PrefabError> {
         match self.mesh {
