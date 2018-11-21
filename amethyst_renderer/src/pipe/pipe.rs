@@ -233,6 +233,7 @@ where
 
         targets.insert("".into(), out.clone());
 
+        // TODO: Remove this attribute when rustfmt plays nice.
         #[rustfmt::skip] // try is a reserved keyword in Rust 2018, must preserve keyword escape.
         let stages = self
             .stages

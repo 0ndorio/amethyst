@@ -1,12 +1,12 @@
 use std::collections::HashMap;
 
-use crate::GltfPrefab;
 use gltf;
 
 use crate::{
     animation::{JointPrefab, SkinPrefab, SkinnablePrefab},
     assets::Prefab,
     core::nalgebra::Matrix4,
+    GltfPrefab,
     renderer::JointTransformsPrefab,
 };
 

@@ -248,6 +248,7 @@ impl<Q> StageBuilder<Q> {
             .cloned()
             .ok_or_else(|| Error::NoSuchTarget(self.target_name.clone()))?;
 
+        // TODO: Remove this attribute when rustfmt plays nice.
         #[rustfmt::skip] // try is a reserved keyword in Rust 2018, must preserve keyword escape.
         let passes = self
             .passes

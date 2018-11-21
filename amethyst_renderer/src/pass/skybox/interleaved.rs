@@ -5,6 +5,7 @@ use amethyst_core::{
     specs::{Read, ReadStorage},
     transform::GlobalTransform,
 };
+
 use crate::{
     error::Result,
     get_camera,
@@ -14,6 +15,7 @@ use crate::{
     },
     set_vertex_args, ActiveCamera, Camera, Encoder, Factory, Mesh, PosTex, Shape, VertexFormat,
 };
+
 use gfx::pso::buffer::ElemStride;
 use glsl_layout::{mat4, Uniform};
 
