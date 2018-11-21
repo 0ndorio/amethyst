@@ -6,8 +6,8 @@ use crate::{
     animation::{JointPrefab, SkinPrefab, SkinnablePrefab},
     assets::Prefab,
     core::nalgebra::Matrix4,
-    GltfPrefab,
     renderer::JointTransformsPrefab,
+    GltfPrefab,
 };
 
 use super::{Buffers, GltfError};
