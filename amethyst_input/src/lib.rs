@@ -1,7 +1,8 @@
 //! A collection of abstractions for various input devices to be used with Amethyst.
 
-#![warn(missing_docs)]
-#![cfg_attr(feature = "cargo-clippy", allow(type_complexity))] // complex project
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 extern crate amethyst_config;
 extern crate amethyst_core;
@@ -15,9 +16,6 @@ extern crate winit;
 
 #[cfg(feature = "sdl_controller")]
 extern crate sdl2;
-
-#[cfg(feature = "profiler")]
-extern crate thread_profiler;
 
 #[cfg(feature = "sdl_controller")]
 pub use self::sdl_events_system::SdlEventsSystem;

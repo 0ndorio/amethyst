@@ -1,7 +1,8 @@
 //! A collection of useful amethyst utilities, designed to make your game dev life easier.
 
-#![warn(missing_docs)]
-#![cfg_attr(feature = "cargo-clippy", allow(type_complexity))] // complex project
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 extern crate amethyst_assets;
 extern crate amethyst_controls;
@@ -17,9 +18,6 @@ extern crate serde;
 extern crate shred;
 #[macro_use]
 extern crate shred_derive;
-
-#[cfg(feature = "profiler")]
-extern crate thread_profiler;
 
 pub mod app_root_dir;
 pub mod circular_buffer;

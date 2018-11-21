@@ -1,6 +1,8 @@
 //! Provides a client-server networking architecture to amethyst.
 
-#![warn(missing_docs)]
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 extern crate amethyst_core;
 #[macro_use]
@@ -9,7 +11,6 @@ extern crate log;
 extern crate serde;
 extern crate bincode;
 extern crate laminar;
-extern crate shred;
 extern crate shrev;
 extern crate uuid;
 
@@ -20,7 +21,7 @@ mod net_event;
 mod network_socket;
 mod test;
 
-pub use {
+pub use crate::{
     bundle::NetworkBundle,
     connection::{ConnectionState, NetConnection, NetIdentity},
     filter::{FilterConnected, NetFilter},

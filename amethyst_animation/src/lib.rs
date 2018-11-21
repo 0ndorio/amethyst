@@ -45,8 +45,9 @@
 //! [ex_ani]: https://github.com/amethyst/amethyst/tree/master/examples/animation
 //! [ex_gltf]: https://github.com/amethyst/amethyst/tree/master/examples/gltf
 
-#![warn(missing_docs)]
-#![cfg_attr(feature = "cargo-clippy", allow(type_complexity))] // complex project
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 extern crate amethyst_assets;
 extern crate amethyst_core;
@@ -64,9 +65,6 @@ extern crate minterpolate;
 extern crate num_traits;
 #[macro_use]
 extern crate serde;
-
-#[cfg(feature = "profiler")]
-extern crate thread_profiler;
 
 pub use self::{
     bundle::{AnimationBundle, SamplingBundle, VertexSkinningBundle},

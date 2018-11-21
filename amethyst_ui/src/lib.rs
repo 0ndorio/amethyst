@@ -1,8 +1,9 @@
 //! Provides components and systems to create an in game user interface.
 
 #![doc(html_logo_url = "https://www.amethyst.rs/assets/amethyst.svg")]
-#![warn(missing_docs)]
-#![cfg_attr(feature = "cargo-clippy", allow(type_complexity))] // complex project
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 extern crate amethyst_assets;
 extern crate amethyst_audio;
@@ -30,10 +31,6 @@ extern crate unicode_normalization;
 extern crate unicode_segmentation;
 extern crate winit;
 
-#[macro_use]
-#[cfg(feature = "profiler")]
-extern crate thread_profiler;
-
 mod action_components;
 mod bundle;
 mod button;
@@ -48,6 +45,9 @@ mod prefab;
 mod resize;
 mod text;
 mod transform;
+
+#[cfg(feature = "profiler")]
+extern crate thread_profiler;
 
 pub use self::{
     action_components::{OnUiActionImage, OnUiActionSound},

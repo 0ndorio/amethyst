@@ -25,8 +25,9 @@
 //! [bk]: https://www.amethyst.rs/book/master/
 
 #![doc(html_logo_url = "https://www.amethyst.rs/assets/amethyst.svg")]
-#![warn(missing_docs)]
-#![cfg_attr(feature = "cargo-clippy", allow(type_complexity))] // complex project
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 extern crate amethyst_assets;
 extern crate amethyst_core;
@@ -85,7 +86,7 @@ extern crate gfx_device_vulkan;
 #[cfg(feature = "vulkan")]
 extern crate gfx_window_vulkan;
 
-pub use {
+pub use crate::{
     bundle::RenderBundle,
     cam::{ActiveCamera, ActiveCameraPrefab, Camera, CameraPrefab, Projection},
     color::Rgba,

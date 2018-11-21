@@ -54,8 +54,9 @@
 //! ```
 
 #![doc(html_logo_url = "https://www.amethyst.rs/assets/amethyst.svg")]
-#![warn(missing_docs)]
-#![cfg_attr(feature = "cargo-clippy", allow(type_complexity))] // complex project
+#![warn(missing_docs, rust_2018_idioms, rust_2018_compatibility)]
+// I have to comment this out as right now no version of this doesn't generate warnings on both stable and beta.
+// #![allow(clippy::type_complexity)] // complex project
 
 #[macro_use]
 #[cfg(feature = "profiler")]
@@ -77,7 +78,6 @@ pub extern crate amethyst_ui as ui;
 pub extern crate amethyst_utils as utils;
 pub extern crate winit;
 
-extern crate amethyst_ui;
 extern crate crossbeam_channel;
 #[macro_use]
 extern crate derivative;
@@ -90,7 +90,7 @@ extern crate rustc_version_runtime;
 #[macro_use]
 extern crate serde_derive;
 
-pub use core::{shred, shrev, specs as ecs};
+pub use crate::core::{shred, shrev, specs as ecs};
 
 pub use self::{
     app::{Application, ApplicationBuilder, CoreApplication},
@@ -106,7 +106,7 @@ pub use self::{
 };
 
 #[doc(hidden)]
-pub use derive::*;
+pub use crate::derive::*;
 
 pub mod prelude;
 
